@@ -1,18 +1,27 @@
 import 'App.css';
-import {ContactForm} from 'components/ContactForm';
-import {ContactList} from 'components/ContactList';
-import { Filter } from 'components/Filter';
+import {Switch, Route} from 'react-router-dom';
+import {AppBar} from 'components/AppBar';
+import {RegisterView, LoginView, ContactsView} from 'views';
 
 function App() {
   return (   
-    <div>
-      <h1>Phonebook</h1>
-      <ContactForm />
+    <>
+      <AppBar />      
 
-      <h2>Contacts</h2>
-      <Filter />
-      <ContactList />       
-    </div>
+      <Switch>
+        <Route path='/register'>
+          <RegisterView />      
+        </Route>
+
+        <Route path='/login'>
+          <LoginView />      
+        </Route>
+
+        <Route path='/contacts'>
+          <ContactsView />      
+        </Route>
+      </Switch>
+    </>
   );
 }
 
