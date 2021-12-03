@@ -6,7 +6,7 @@ import s from './ContactForm.module.css';
 
 const INITIAL_STATE = {
   name: '',
-  phone: '',
+  number: '',
 };
 
 function ContactForm() {
@@ -51,8 +51,8 @@ function ContactForm() {
         <input
           type="tel"
           className={s.form__input}
-          name="phone"
-          value={contact.phone}
+          name="number"
+          value={contact.number}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
           required
@@ -67,7 +67,7 @@ function ContactForm() {
 ContactForm.propTypes = {
   target: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
   }),
 };
 

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {register} from '../../redux/auth/auth-operations';
+import PropTypes from 'prop-types';
+import {authOperations} from 'redux/auth';
 import s from './RegisterView.module.css';
 
 const INITIAL_STATE = {
@@ -23,11 +24,17 @@ function RegisterView() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(register(user));
+        dispatch(authOperations.register(user));
+        reset();
+
+    };
+
+    const reset = () => {
+        setUser(INITIAL_STATE);
     };
 
     return (        
-        <form className={s.form} autoComplete="off" onSubmit={handleSubmit}>
+        <form className={s.form} onSubmit={handleSubmit}>
             <label className={s.form__label}>Name
                 <input
                     className={s.form__input}
@@ -62,5 +69,13 @@ function RegisterView() {
         </form>        
     );
 }
+
+RegisterView.propTypes = {
+    user: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        email: PropTypes.string.isRequired,
+        password: PropTypes.string.isRequired,
+    }),
+};
 
 export default RegisterView;

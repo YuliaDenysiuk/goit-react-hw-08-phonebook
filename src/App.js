@@ -1,9 +1,18 @@
 import 'App.css';
-import {Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import {AppBar} from 'components/AppBar';
-import {RegisterView, LoginView, ContactsView} from 'views';
+import { RegisterView, LoginView, ContactsView } from 'views';
+import { authOperations } from 'redux/auth';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authOperations.fetchCurrentUser());
+  }, [dispatch]);
+
   return (   
     <>
       <AppBar />      

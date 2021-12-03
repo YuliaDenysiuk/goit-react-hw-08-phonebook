@@ -25,13 +25,11 @@ function ContactList() {
   <>
     {isLoading && <Loader />}
     <ul className={s.contacts}>      
-      {(contacts.length > 1) && (
-        contacts.map(({ id, name, phone }) => (
+      {contacts.map(({ id, name, number }) => (
         <li key={id} className={s.contacts__item}>
-          {name}: {phone}
+          {name}: {number}
           <button type="button" className={s.contacts__button} onClick={() => onDeleteContact(id)}>Delete</button>
-        </li>))
-      )}
+        </li>))}
     </ul>
   </>
   );
@@ -41,7 +39,7 @@ ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
-      phone: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     }),
   ),
 };
