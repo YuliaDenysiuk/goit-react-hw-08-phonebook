@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/views/HomeView/HomeView.module.css"],"names":[],"mappings":"AAAA,wBACE,wBAAyB,CACzB,eAAgB,CAChB,aAAuB,CACvB,cACF","file":"home-page.d6aa1e38.chunk.css","sourcesContent":[".header {\r\n  text-transform: uppercase;\r\n  font-weight: 800;\r\n  color: rgb(16, 165, 23);\r\n  font-size: 44px;\r\n}\r\n"]}

@@ -6,12 +6,11 @@ import { PersistGate } from 'redux-persist/integration/react';
 import 'index.css';
 import App from 'App';
 import { store, persistor } from 'redux/store';
-import { Loader } from 'components/Loader';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>  
-      <PersistGate loading={<Loader />} persistor={persistor}>        
+      <PersistGate loading={null} persistor={persistor}>        
         <BrowserRouter>
           <App />
         </BrowserRouter>

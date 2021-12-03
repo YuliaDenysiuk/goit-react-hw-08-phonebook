@@ -40,6 +40,7 @@ function LoginView() {
                     name='email'
                     value={user.email}
                     required
+                    autoComplete="username"
                     onChange={handleChange}>
                 </input>
             </label>
@@ -50,6 +51,7 @@ function LoginView() {
                     name='password'
                     value={user.password}
                     required
+                    autoComplete="current-password"
                     onChange={handleChange}>                    
                 </input>
             </label>

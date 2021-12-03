@@ -16,12 +16,6 @@ function AuthNav() {
             activeClassName={s.activeLink}>
             Login
         </NavLink>
-        <NavLink 
-            to="/contacts" 
-            className={s.link} 
-            activeClassName={s.activeLink}>
-            Contacts
-        </NavLink>
     </nav>)
 }
 

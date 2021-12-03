@@ -52,6 +52,7 @@ function RegisterView() {
                     name='email'
                     value={user.email}
                     required
+                    autoComplete="username"
                     onChange={handleChange}>                    
                 </input>
             </label>
@@ -62,6 +63,7 @@ function RegisterView() {
                     name='password'
                     value={user.password}
                     required
+                    autoComplete="current-password"
                     onChange={handleChange}>                    
                 </input>
             </label>
